@@ -1,0 +1,35 @@
+def is_prime(number):
+    if number <= 1:
+        return False
+    if number == 2:
+        return True
+    if number % 2 == 0:
+        return False
+    divisor = 3
+    while divisor * divisor <= number:
+        if number % divisor == 0:
+            return False
+        divisor += 2
+    return True
+
+def next_prime(n):
+    next_number = n + 1
+    while True:
+        if is_prime(next_number):
+            return next_number
+        next_number += 1
+
+if __name__ == "__main__":
+    user_input = int(input("Enter an integer: "))
+    prime = next_prime(user_input)
+    print("The next prime number after", user_input, "is", prime)
+def median_of_three(num1, num2, num3):
+    sorted_nums = sorted([num1, num2, num3])
+    return sorted_nums[1]
+
+if __name__ == "__main__":
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    num3 = float(input("Enter the third number: "))
+    median = median_of_three(num1, num2, num3)
+    print("The median of", num1, ",", num2, ", and", num3, "is", median)
